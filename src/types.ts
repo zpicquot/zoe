@@ -4,7 +4,7 @@ export interface Article {
   subtitle?: string;
   excerpt?: string;
   content?: string;
-  category: 'Conceptual' | 'Archives' | 'Tendances' | 'Designers' | 'Opinions' | 'Défilés';
+  category: 'Conceptual' | 'Trends' | 'Designers' | 'Opinions';
   house?: string;
   author: string;
   date: string;
@@ -16,4 +16,5 @@ export interface Article {
 export interface Category {
   name: string;
   slug: string;
+  subcategories?: { name: string; slug: string }[];
 }

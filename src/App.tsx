@@ -14,9 +14,7 @@ export default function App() {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   const heroArticle = ARTICLES.find(a => a.id === '1') || ARTICLES[0];
-  const latestCritiques = ARTICLES.filter(a => a.category === 'Conceptual' || a.category === 'Tendances').slice(0, 3);
-  const featuredCritique = ARTICLES.find(a => a.id === '4') || ARTICLES[3];
-  const opinionArticles = ARTICLES.filter(a => a.category === 'Opinions' || a.category === 'Archives').slice(0, 2);
+  const remainingArticles = ARTICLES.filter(a => a.id !== heroArticle.id);
 
   const handleArticleClick = (article: Article) => {
     setSelectedArticle(article);
@@ -31,59 +29,21 @@ export default function App() {
         {/* Hero Section */}
         <Hero article={heroArticle} onRead={handleArticleClick} />
 
-        {/* Latest Critiques Section */}
-        <section id="conceptual" className="py-48 max-w-screen-2xl mx-auto px-6 md:px-12">
+        {/* The Grid Section */}
+        <section id="latest" className="py-48 max-w-screen-2xl mx-auto px-6 md:px-12">
           <div className="mb-32 text-center space-y-4">
-            <span className="text-white/40 text-[12px] uppercase tracking-[0.8em] font-medium block">
-              The Registry
-            </span>
-            <h2 className="text-6xl md:text-9xl font-serif tracking-tighter text-white uppercase italic">
-              Absolute Archives
+            <h2 className="text-6xl md:text-7xl font-serif tracking-tighter text-white uppercase italic">
+              The Latest Articles
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-24 gap-y-32">
-            {latestCritiques.slice(0, 3).map((article, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
+            {remainingArticles.map((article, idx) => (
               <ArticleCard key={article.id} article={article} index={idx} onClick={handleArticleClick} />
             ))}
           </div>
         </section>
 
-        {/* Featured Critique Section */}
-        <FeaturedArticle article={featuredCritique} onRead={handleArticleClick} />
-
-        {/* Trends & Opinions Section */}
-        <section id="opinions" className="py-48 max-w-screen-2xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-32 items-center">
-            <div className="lg:col-span-5 space-y-12">
-              <div className="space-y-6">
-                <span className="text-white/40 text-[12px] uppercase tracking-[0.8em] font-medium block">
-                  Manifestos
-                </span>
-                <h2 className="text-7xl font-serif tracking-tighter text-white uppercase">Deep Dives</h2>
-              </div>
-              <p className="text-white/50 text-xl font-light leading-relaxed">
-                Interrogating the architectural foundations of modern silhouette and the radical shift towards absolute black.
-              </p>
-              <div className="py-12 border-y border-white/5">
-                <p className="font-serif italic text-4xl leading-tight text-white/60">
-                  "Black is the soul of all architecture."
-                </p>
-                <span className="block mt-8 text-[11px] uppercase tracking-[0.6em] font-bold text-white/20">— Anonyme</span>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 gap-32">
-                {opinionArticles.slice(0, 2).map((article, idx) => (
-                  <ArticleCard key={article.id} article={article} index={idx} onClick={handleArticleClick} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Newsletter Section */}
         <Newsletter />
       </main>
 

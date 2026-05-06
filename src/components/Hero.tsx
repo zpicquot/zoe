@@ -17,11 +17,11 @@ export default function Hero({ article, onRead }: HeroProps) {
           className="lg:col-span-12 space-y-12 z-10 text-center"
         >
           <div className="space-y-6">
-            <h2 className="text-6xl md:text-9xl font-serif leading-[1] tracking-tighter text-white uppercase italic">
+            <h2 className="text-6xl md:text-7xl font-serif leading-[1] tracking-tighter text-white uppercase italic">
               {article.title}
             </h2>
             <span className="text-white/50 text-[11px] uppercase tracking-[0.6em] font-medium block">
-              {article.category} — {article.date}
+              {article.date}
             </span>
           </div>
           
@@ -41,24 +41,16 @@ export default function Hero({ article, onRead }: HeroProps) {
           <img 
             src={article.imageUrl} 
             alt={article.title}
-            className="w-full h-full object-cover grayscale"
+            className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
         </motion.div>
       </div>
 
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20">
-        <button 
-          onClick={() => onRead?.(article)}
-          className="px-16 py-5 bg-white text-black text-[11px] uppercase tracking-[0.4em] font-bold hover:invert transition-all rounded-full"
-        >
-          Explore Feature
-        </button>
       </div>
 
       <div className="absolute bottom-12 right-6 md:right-24 hidden md:flex flex-col items-center gap-4">
-        <div className="w-[1px] h-16 bg-white/20" />
-        <span className="text-white/20 text-[9px] uppercase tracking-[0.5em] font-bold">Scroll</span>
       </div>
     </section>
   );

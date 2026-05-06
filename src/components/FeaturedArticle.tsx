@@ -29,16 +29,9 @@ export default function FeaturedArticle({ article, onRead }: FeaturedArticleProp
                   The Cover Story
                 </span>
                 
-                <h2 className="text-6xl md:text-9xl font-serif leading-[0.9] tracking-tighter text-white uppercase italic">
+                <h2 className="text-6xl md:text-7xl font-serif leading-[0.9] tracking-tighter text-white uppercase italic">
                   {article.title}
                 </h2>
-
-                <button 
-                  onClick={() => onRead?.(article)}
-                  className="px-16 py-6 bg-white text-black text-[11px] uppercase tracking-[0.4em] font-bold hover:invert transition-all rounded-full"
-                >
-                  Explore Feature
-                </button>
               </div>
             </div>
           </motion.div>

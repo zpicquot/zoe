@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-24 mb-48">
           <div className="md:col-span-2">
-            <h2 className="text-4xl font-serif tracking-[0.2em] mb-12">REVIEW</h2>
+            <h2 className="text-4xl font-noir tracking-normal mb-12">REVIEW</h2>
             <p className="text-white/30 text-sm uppercase tracking-[0.2em] leading-loose max-w-md font-medium">
               A radical fashion sanctuary. Curated critiques, architectural perspectives, and the absolute essence of the global runway.
             </p>
@@ -30,7 +30,7 @@ export default function Footer() {
             <ul className="space-y-6">
               <li><a href="#" className="text-[10px] uppercase tracking-[0.3em] text-white/30 hover:text-white transition-colors font-medium">Instagram</a></li>
               <li><a href="#" className="text-[10px] uppercase tracking-[0.3em] text-white/30 hover:text-white transition-colors font-medium">Pinterest</a></li>
-              <li><a href="#" className="text-[10px] uppercase tracking-[0.3em] text-white/30 hover:text-white transition-colors font-medium">Noir Letter</a></li>
+              <li><a href="#newsletter" className="text-[10px] uppercase tracking-[0.3em] text-white/30 hover:text-white transition-colors font-medium">Noir Letter</a></li>
             </ul>
           </div>
         </div>

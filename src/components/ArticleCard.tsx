@@ -24,16 +24,12 @@ export default function ArticleCard({ article, index, onClick }: ArticleCardProp
           transition={{ duration: 0.8, ease: "easeOut" }}
           src={article.imageUrl} 
           alt={article.title}
-          className="w-full h-full object-cover grayscale brightness-75 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-700"
+          className="w-full h-full object-cover group-hover:brightness-100 transition-all duration-700"
           referrerPolicy="no-referrer"
         />
       </div>
       
       <div className="space-y-3">
-        <span className="text-[9px] uppercase tracking-[0.5em] font-medium text-white/40">
-          {article.category}
-        </span>
-        
         <h3 className="text-xl font-serif leading-tight text-white group-hover:italic transition-all">
           {article.title}
         </h3>

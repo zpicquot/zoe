@@ -77,13 +77,13 @@ export default function ArticleView({ article, allArticles, onClose, onArticleSe
               transition={{ delay: 0.2 }}
               className="text-white/40 text-[11px] uppercase tracking-[0.6em] font-medium mb-8 block"
             >
-              {article.category} — {article.date}
+              {article.date}
             </motion.span>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-8xl font-serif leading-[0.9] tracking-tighter text-white uppercase italic mb-12"
+              className="text-5xl md:text-6xl font-serif leading-[0.9] tracking-tighter text-white uppercase italic mb-12"
             >
               {article.title}
             </motion.h1>
@@ -106,7 +106,7 @@ export default function ArticleView({ article, allArticles, onClose, onArticleSe
             <img 
               src={article.imageUrl} 
               alt={article.title}
-              className="w-full h-full object-cover grayscale brightness-75"
+              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -152,7 +152,6 @@ export default function ArticleView({ article, allArticles, onClose, onArticleSe
                       />
                     </div>
                     <div className="space-y-2">
-                      <span className="text-[9px] uppercase tracking-widest font-bold text-white/30 block">{rel.category}</span>
                       <h4 className="text-lg font-serif leading-tight text-white group-hover:italic transition-all">{rel.title}</h4>
                     </div>
                   </button>
@@ -167,7 +166,7 @@ export default function ArticleView({ article, allArticles, onClose, onArticleSe
               onClick={onClose}
               className="px-16 py-5 border border-white/10 rounded-full text-[11px] uppercase tracking-[0.4em] font-bold text-white/40 hover:bg-white hover:text-black hover:border-white transition-all"
             >
-              Return to Archives
+              Return to Main
             </button>
           </footer>
         </div>
